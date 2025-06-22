@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacja Paliw</title>
+    <link rel="stylesheet" href="script.css">
+</head>
+<body>
+    <section id="main">
+        <section id="baner">
+            <h1>Całodobowa stacja paliw</h1>
+        </section>
+            <section id="menu">
+                <a href="stacja.html"><img src="img/home.png" alt=""></a>
+                <a href="obliczenia.html"><img src="img/znak.png" alt=""></a>
+                <a href="kwerendy.txt">Pobierz dokumenty</a>
+            </section>
+                <section id="left">
+                    <h2>Orientacyjny koszt paliwa</h2>
+
+                    <label for="rodzaj">Rodzaj paliw (1-benzyna,2-olej napędowy)</label><br>
+                    <input type="text" id="rodzaj" value="1"><br>
+                    <label for="ilosc">Ile litrów?</label><br>
+                    <input type="text" id="ilosc" value="1"><br>
+                    <button onclick="Paliwo();">Cena</button>
+                    <p id="demo3"></p>
+                </section>
+                    <section id="right">
+                        <img src="img/samochod.png" alt="samochod">
+                    </section>
+                        <section id="footer">
+                            <p>Stronę opracował: 00000000</p>
+                        </section>
+    </section>
+    <script>
+    function Paliwo() {
+        let rodzaj = (document.getElementById("rodzaj").value);
+        let ilosc = (document.getElementById("ilosc").value);
+        let cena = 0
+        if(rodzaj ==1){
+            cena = 4;
+        }
+        if(rodzaj == 2){
+            cena = 3.5;
+        }
+        document.getElementById("demo3").innerHTML = "koszt paliwa: "+ilosc*cena+" zł";
+    }
+    </script>
+</body>
+</html>
